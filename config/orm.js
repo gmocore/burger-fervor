@@ -1,4 +1,4 @@
-const connection = require("./connecion");
+const connection = require("./connection");
 
 module.exports = {
   selectAll: function() {
