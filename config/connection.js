@@ -4,17 +4,17 @@ const connection = sql.createConnection({
   host: "localhost",
   user: "root",
   password: "gerritt",
-  database: "burgers_db",
+  database: "burger_db",
   port: 3306
 });
 
 // connection.connect();
-
-// connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-//   if (error) throw error;
-//   console.log('The solution is: ', results[0].solution);
-// });
-
-// connection.end();
+connection.connect(err => {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
+  }
+  console.log(`connected as id ${connection.threadId}`)
+})
 
 module.exports = connection;

@@ -1,1 +1,10 @@
 <h1>Burgers</h1>
+
+{{#each burgers}}
+{{#unless devoured}}
+<form action="/eat/{{id}}" method="post">
+
+    <h2>{{burger_name}} <span><button type="submit" id={{id}}>devour</button></span> </h2>
+</form>
+{{/unless}}
+{{/each}}
