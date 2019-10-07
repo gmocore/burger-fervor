@@ -18,7 +18,7 @@ const orm = {
     })
   },
   update: (id, cb) => {
-    connection.query(`UPDATE burgers SET ? WHERE id = ?`, [{devoured: true}, {id: id}], (error, result) => {
+    connection.query(`UPDATE burgers SET ? WHERE id = ?`, [{devoured: true}, id], (error, result) => {
       if (error) throw error;
       cb(result);
     })

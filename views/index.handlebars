@@ -1,10 +1,39 @@
 <h1>Burgers</h1>
 
+<h2>Add a burger</h2>
+
+
+
+<input type="text" name="new-burger" id="new-burger"><span>
+    <button type="submit" id="add-burger">add</button>
+</span>
+
+
+
 {{#each burgers}}
 {{#unless devoured}}
-<form action="/eat/{{id}}" method="post">
+<form action="/eat/{{this.id}}" method="post">
 
-    <h2>{{burger_name}} <span><button type="submit" id={{id}}>devour</button></span> </h2>
+    <h2>{{burger_name}} 
+        <span><button type="submit" id={{this.id}}>devour</button></span> 
+    </h2>
 </form>
 {{/unless}}
 {{/each}}
+
+{{#each burgers}}
+    {{#if this.devoured}}
+        <p>{{this.burger_name}}</p>
+    {{/if}}
+{{/each}}
+
+<script>
+    console.log('connected')
+
+    $('#add-burger').click(event => {
+        let newBurgerName = $('#new-burger').val()
+    $.post('/add', {burger_name: newBurgerName}, data => {
+        console.log(data)
+    })
+    })
+</script>
