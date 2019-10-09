@@ -2,12 +2,14 @@ const connection = require("./connection");
 
 const orm = {
   displayAll: (tableName, cb) => {
-    let queryString = `SELECT * FROM ${tableName};`;
-    connection.query(queryString, (error, result) => {
+    let queryString = `SELECT * FROM ??;`;
+    
+    connection.query(queryString, [tableName], (error, result) => {
       if (error) throw error;
       cb(result)
     })
   },
+  
   create: (burger_name, cb) => {
     let queryString = `INSERT INTO burgers SET ?;`;
 

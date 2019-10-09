@@ -7,12 +7,10 @@ router.get("/", (req, res) => {
     let handlebarsObject = {
       burgers: data
     };
-    console.log(handlebarsObject);
     res.render("index", handlebarsObject);
   });
 
   router.post("/add", (req, res) => {
-    console.log(req.body);
 
     burger.create(req.body.burger_name, () => {
       res.redirect('/');
