@@ -13,14 +13,17 @@
 <div class="container">
     <div class="row">
         <div class="col">
+            <div class="container">
+
             <h2 class="mb-3">Burgers to Devour</h2>
+            </div>
             {{#each burgers}}
             {{#unless devoured}}
             <form action="/eat/{{this.id}}" method="post">
                 <div class="container">
                     <p class="lead">{{burger_name}}
                     </p>
-                    <button class="btn btn-secondary" type="submit" id={{this.id}}>devour that shit</button></span>
+                    <button class="btn btn-secondary" type="submit" id={{this.id}}>devour</button></span>
                 </div>
             </form>
             {{/unless}}
