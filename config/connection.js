@@ -1,5 +1,7 @@
+// set up connection to database
 const sql = require("mysql");
 
+// connetion and credentials to export
 const connection = sql.createConnection({
   host: "localhost",
   user: "root",
@@ -8,7 +10,7 @@ const connection = sql.createConnection({
   port: 3306
 });
 
-// connection.connect();
+// connection to db
 connection.connect(err => {
   if (err) {
     console.error("error connecting: " + err.stack);
@@ -17,4 +19,5 @@ connection.connect(err => {
   console.log(`connected as id ${connection.threadId}`)
 })
 
+//export to use with orm
 module.exports = connection;

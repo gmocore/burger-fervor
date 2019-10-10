@@ -17,8 +17,11 @@
 
             <h2 class="mb-3">Burgers to Devour</h2>
             </div>
+            {{!--  loop through burgers --}}
             {{#each burgers}}
+            {{!-- if devoured = false render to burger list --}}
             {{#unless devoured}}
+            {{!-- create form for each burger with a button to devour --}}
             <form action="/eat/{{this.id}}" method="post">
                 <div class="container">
                     <p class="lead">{{burger_name}}
@@ -31,6 +34,7 @@
         </div>
         <div class="col">
             <h2 class="mb-3">Devoured Burgers</h2>
+            {{!-- place burger in second column after value is changed --}}
             {{#each burgers}}
             {{#if devoured}}
             <p class="text-secondary lead">{{burger_name}}</p>

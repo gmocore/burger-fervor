@@ -25,13 +25,13 @@
         crossorigin="anonymous"></script>
         <script>
     console.log('connected')
-
+    // trigger ajax request when new burger is submitted
     $('#add-burger').click(event => {
-        let newBurgerName = $('#new-burger').val()
+        let newBurgerName = $('#new-burger').val().trim();
         $.post('/add', { burger_name: newBurgerName }, data => {
             location.reload()
-        })
-    })
+        });
+    });
 </script>
  
 </body>

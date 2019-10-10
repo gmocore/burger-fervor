@@ -1,5 +1,6 @@
 const orm = require("../config/orm");
 
+// serves as a template for calling db in controller
 const burger = {
   selectAll: (cb) => {
     orm.displayAll('burgers', res => {
@@ -18,4 +19,6 @@ const burger = {
     })
   }
 };
+
+// export to use with controller
 module.exports = burger;
