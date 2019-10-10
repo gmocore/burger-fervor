@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid p-0">
 
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light shadow mb-3 bg-dark text-light">
         <a class="navbar-brand">Burger Fervor <span><i class="fas fa-hamburger"></i></span></a>
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="text" placeholder="add a burger" id="new-burger">
@@ -23,21 +23,21 @@
             {{#unless devoured}}
             {{!-- create form for each burger with a button to devour --}}
             <form action="/eat/{{this.id}}" method="post">
-                <div class="container">
-                    <p class="lead">{{burger_name}}
+                <div class="container shadow border mb-2">
+                    <p class="lead ">{{burger_name}}
                     </p>
-                    <button class="btn btn-secondary" type="submit" id={{this.id}}>devour</button></span>
+                    <button class="btn btn-secondary mb-2 shadow" type="submit" id={{this.id}}>devour</button></span>
                 </div>
             </form>
             {{/unless}}
             {{/each}}
         </div>
-        <div class="col">
-            <h2 class="mb-3">Devoured Burgers</h2>
+        <div class="col border shadow">
+            <h2 class="mb-3 text-center m-3">Devoured Burgers</h2>
             {{!-- place burger in second column after value is changed --}}
             {{#each burgers}}
             {{#if devoured}}
-            <p class="text-secondary lead">{{burger_name}}</p>
+            <p class="text-danger lead">{{burger_name}}</p>
             {{/if}}
             {{/each}}
         </div>
