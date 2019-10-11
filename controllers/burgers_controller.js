@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 
     burger.create(req.body.burger_name, () => {
       // redirect to home page once burger is added
-      res.redirect('/');
+      res.sendStatus(200);
     });
   });
 });
