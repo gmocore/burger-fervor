@@ -1,4 +1,5 @@
 // set up connection to database
+require('dotenv').config();
 const sql = require("mysql");
 let connection;
 
